@@ -1,6 +1,6 @@
 # gestor_recordatorios_tratamiento_medico
 
-Proyecto de Trabajo Terminal de Instituto Politecncio Nacional - UPIIIZ, Aplicacion movil  Gestor de recordatorios para tratamiento medico. Una aplicacion donde se ingresa el tratamiento medico y genera las alarmas respecto al medicamento, sus dosis y horario
+Proyecto de Trabajo Terminal de Instituto Politecnico Nacional - UPIIZ, Aplicacion movil  Gestor de recordatorios para tratamiento medico. Una aplicacion donde se ingresa el tratamiento medico y genera las alarmas respecto al medicamento, sus dosis y horario
 
 ## Getting Started
 
