@@ -26,4 +26,18 @@ class Dosis{
       comentario: json['comentario'] as String?
     );
   }
+  int get_estado(){
+    return estado;
+  }
+  DateTime get_momento(){
+    return momento;
+  }
+
+  String? get_comentario(){
+    if (comentario!=null){
+    return comentario;
+    }
+    else
+      return "sin comentario";
+  }
 }

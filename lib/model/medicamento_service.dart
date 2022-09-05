@@ -1,3 +1,5 @@
+import 'dart:html';
+
 class Medicamento{
   final int tratamiento_id;
   final int medicamento_id;
@@ -31,5 +33,20 @@ class Medicamento{
     numero_dosis: json['numero_dosis']as int?,
     comentario: json['comentario']as String?
     );
+  }
+  String get_nombre(){
+    return nombre;
+  }
+  String get_presentacion(){
+    return presentacion;
+  }
+  String  get_dosis(){
+    return  dosis;
+  }
+  int? get_numero_dosis(){
+    return numero_dosis;
+  }
+  int? get_horario(){
+    return horario_horas;
   }
 }

@@ -42,4 +42,5 @@ class Tratamiento{
         return "Discrepancia";
     }
   }
+
 }
