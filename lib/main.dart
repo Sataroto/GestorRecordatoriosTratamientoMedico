@@ -1,5 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:gestor_recordatorios_tratamiento_medico/resources/materialcolor.dart';
+import 'package:get/get.dart';
+void main(){
+  runApp(Myapp());
+}
 
+class Myapp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return GetMaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: generateMaterialColor(const Color(0xFF00D437)),
+        ).copyWith(
+          secondary: generateMaterialColor(const Color(0xFF00D3E0)),
+        ),
+      ),
+
+      initialRoute: AppRoutes.DASHBOARD,
+      // TODO: getPages: AppViews.list);
+    );
+  }
+}
+/*
 void main() {
   runApp(const MyApp());
 }
@@ -112,4 +135,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-}
+}*/

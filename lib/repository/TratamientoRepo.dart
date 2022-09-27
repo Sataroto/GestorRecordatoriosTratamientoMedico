@@ -2,6 +2,7 @@ import 'dart:core';
 import 'package:gestor_recordatorios_tratamiento_medico/model/tratamieno_service.dart';
 import 'package:gestor_recordatorios_tratamiento_medico/model/medicamento_service.dart';
 import 'package:gestor_recordatorios_tratamiento_medico/model/dosis_services.dart';
+import 'package:get/get.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
@@ -89,21 +90,27 @@ class TratamientoSqlite implements TratamientoRepo{
   }
 
   @override
-  Future<int?> getCount() {
-    // TODO: implement getCount
-    throw UnimplementedError();
+  Future<int?> getCount() async{
+  var dbClient = await _db;
+  var result = Sqflite.firstIntValue(
+    await dbClient!.rawQuery("SELECT COUNT (*) FROM tratamientos")
+  );
+  return result;
   }
 
   @override
-  Future<List<Medicamento>> get_medicamentos(int id) {
-    // TODO: implement get_medicamentos
-    throw UnimplementedError();
+  Future<List<Medicamento>> get_medicamentos(int id) async{
+    var dbClient = await _db;
+    final response = await dbClient?.rawQuery('SELECT * FROM medicamentos where id_tratamiento = '+id.toString());
+    final listamedicamentos = response?.map((medicamento) => Medicamento.fromJson(medicamento)).toList() ??[];
+    return listamedicamentos;
   }
-
   @override
-  Future<List<Tratamiento>> get_tratamientos() {
-    // TODO: implement get_tratamientos
-    throw UnimplementedError();
+  Future<List<Tratamiento>> get_tratamientos() async {
+    var dbClient = await db;
+    final response = await dbClient?.rawQuery('SELECT * FROM tratamientos');
+    final listatratamientos = response?.map((tratamiento) => Tratamiento.fromJson(tratamiento)).toList() ??[];
+    return listatratamientos;
   }
   
 }
